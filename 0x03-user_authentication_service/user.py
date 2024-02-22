@@ -1,21 +1,16 @@
 #!/usr/bin/env python3
-"""_summary_
-"""
+"""module for the User class"""
 
-
-from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import Column, Integer, String
+
 Base = declarative_base()
 
 
 class User(Base):
-    """_summary_
+    """Represents a user in the application."""
 
-    Args:
-        Base (_type_): _description_
-    """
-    __tablename__ = 'users'
-
+    __tablename__ = "users"
     id = Column(Integer, primary_key=True)
     email = Column(String(250), nullable=False)
     hashed_password = Column(String(250), nullable=False)
